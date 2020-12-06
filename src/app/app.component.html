@@ -1,0 +1,67 @@
+<div id="root">
+
+	<div class="header">
+		<p class="header-title">{{ title }}</p>
+	</div>
+
+	<div *ngIf="message">
+		<p class="message">{{ message }}</p>
+	</div>
+
+	<div class="ide">
+
+		<div class="editor">
+			<div class="menubar">
+				<div class="close-btn"></div>
+				<div class="minimize"></div>
+				<div class="maximize"></div>
+			</div>
+
+			<textarea id="idecode" class="workspace" placeholder="  Your code goes here." onkeydown="if(event.keyCode===9){var v=this.value,s=this.selectionStart,e=this.selectionEnd;this.value=v.substring(0, s)+'\t'+v.substring(e);this.selectionStart=this.selectionEnd=s+1;return false;}">{{ sourcecode }}</textarea>
+		</div>
+
+		<div class="user-input-container">
+			<textarea id="userinput" class="user-input" placeholder="  Custom input goes here." onkeydown="if(event.keyCode===9){var v=this.value,s=this.selectionStart,e=this.selectionEnd;this.value=v.substring(0, s)+'\t'+v.substring(e);this.selectionStart=this.selectionEnd=s+1;return false;}">{{ userinput }}</textarea>
+		</div>
+
+		<div class="row controls">
+			<div class="col">
+
+				<div class="select-language btn-group">
+					<button class="btn btn-primary btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					{{ selected_language }}
+					</button>
+					<div class="dropdown-menu dropdown-menu-right">
+						<a *ngFor="let lang of languages" class="dropdown-item" (click)="onSelect(lang)">{{ lang }}</a>
+					</div>
+				</div>
+				
+				<div class="invalid-file">
+					<p *ngIf="invalidFile">Invalid File Selected.</p>
+				</div>
+				
+				<div class="custom-row">
+					<div class="custom-col-lg file-selector custom-file" (change)="handleFileInput($event.target.files)">
+						<input type="file" class="custom-file-input" id="sourcecodefile">
+						<label class="custom-file-label" for="customFile">{{ filename }}</label>
+					</div>
+	
+					<button class="custom-col btn btn-danger reset-button" (click)="resetFile()">Reset All</button>
+				</div>
+
+			</div>
+			<div class="col">
+				<button [disabled]="invalidFile" class="submit btn btn-primary" (click)="onRun()">Run</button>
+			</div>
+		</div>
+
+	</div>
+
+	<div class="result">
+		<label>Output : </label>
+		<div *ngIf="result" class="output">
+			<pre><p>{{ result }}</p></pre>
+		</div>
+	</div>
+
+</div>

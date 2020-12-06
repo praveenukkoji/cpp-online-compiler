@@ -1,0 +1,168 @@
+#root{
+    min-height: 100vh;
+}
+
+.header{
+    background-color: rgba(226, 82, 65, 1);
+    padding: 20px;
+
+    .header-title{
+        margin: 0;
+        font-family: 'Courier New', Courier, monospace;
+        font-size: xx-large;
+        font-weight: bolder;
+        color: white;
+    }
+}
+
+.custom-row{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.custom-col{
+    flex-basis: 0;
+    flex-grow: 1;
+    max-width: 100%;
+}
+
+.custom-col-lg{
+    flex-basis: 0;
+    flex-grow: 4;
+    max-width: 100%;
+}
+
+.message{
+    margin-top: 60px;
+    text-align: center;
+    color: red;
+}
+
+.ide{
+    padding: 40px;
+    padding-left: 240px;
+    padding-right: 240px;
+
+    .editor{
+        margin-bottom: 20px;
+
+        .menubar{
+            background-color: rgb(213, 213, 213);
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+            padding: 8px;
+            padding-left: 12px;
+
+            .close-btn{
+                height: 12px;
+                width: 12px;
+                border-radius: 50%;
+                background-color: rgb(237, 101, 90);
+                display: inline-block;
+                margin-right: 8px;
+            }
+
+            .minimize{
+                height: 12px;
+                width: 12px;
+                border-radius: 50%;
+                background-color: rgb(225, 192, 76);
+                display: inline-block;
+                margin-right: 8px;
+            }
+
+            .maximize{
+                height: 12px;
+                width: 12px;
+                border-radius: 50%;
+                background-color: rgb(114, 191, 71);
+                display: inline-block;
+                margin-right: 8px;
+            }
+        }
+
+        .workspace{
+            height: 50vh;
+            width: 100%;
+            background-color: rgb(30, 30, 30);
+            border: none;
+            
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
+
+            font-family: monospace, Courier;
+            font-size: 18px;
+            font-weight: 100;
+            color: white;
+        }
+
+        .workspace:focus{
+            outline: none;
+        }
+    }
+
+    .user-input-container{
+
+        .user-input{
+            min-height: 100px;
+            width: 100%;
+        }
+    }
+
+    .controls{
+
+        .select-language{
+            margin-bottom: 20px;
+            margin-right: 20px;
+        }
+
+        .invalid-file{
+            display: inline-block;
+
+            font-family: monospace, Courier;
+            font-size: 15px;
+            font-weight: 100;
+            color: red;
+        }
+
+        .reset-button{
+            margin-left: 40px;
+        }
+
+        .submit{
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+        }
+
+        .col{
+            padding: 20px;
+        }
+    }
+}
+
+.result{
+    padding: 40px;
+    margin-left: 240px;
+    margin-right: 240px;
+
+    label{
+        font-size: 20px;
+        font-weight: 500;
+    }
+
+    .output{
+        max-height: 600px;
+        
+        pre{
+            max-height: 600px;
+            border: solid 5px rgb(45, 231, 45);
+            border-radius: 10px;
+            background-color: rgb(146, 255, 132);
+            padding: 30px;
+            overflow-x: scroll;
+            overflow-y: scroll;
+        }
+
+    }
+}
