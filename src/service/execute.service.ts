@@ -13,7 +13,7 @@ export class ExecuteService {
   ) { }
 
   executeidecodeinput(sourcecode, input, filetype): Observable<Result>{
-    const url = "https://cpp-online-compiler-api.herokuapp.com//executeidecode/";
+    const url = "https://cpp-online-compiler-api.herokuapp.com/executeidecode/";
     let body = {
       sourcecode: sourcecode,
       input: input,
