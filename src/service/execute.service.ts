@@ -13,7 +13,7 @@ export class ExecuteService {
   ) { }
 
   executeidecodeinput(sourcecode, input, filetype): Observable<Result>{
-    const url = "http://localhost:8000/executeidecode/";
+    const url = "http://cpp-online-compiler-api/executeidecode/";
     let body = {
       sourcecode: sourcecode,
       input: input,
